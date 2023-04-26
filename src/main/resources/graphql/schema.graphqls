@@ -1,0 +1,20 @@
+# ========== Movies ==========
+type Actor {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  lastMovie: Movie!
+}
+
+type Movie {
+  id: ID!
+  movieName: String!
+  actors: [Actor]
+  noOfSeasons: Int
+}
+
+# ========== Queries ==========
+type Query {
+  movies: [Movie!]!
+  movieById(id: ID): Movie
+}
